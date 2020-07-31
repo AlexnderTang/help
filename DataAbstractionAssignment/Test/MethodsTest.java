@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.SQLOutput;
+
 import static org.junit.Assert.assertEquals;
 
 public class MethodsTest {
@@ -15,7 +17,7 @@ public class MethodsTest {
 
     @Test
     public void testDepositToString(){
-    assertEquals(test.Deposit.toString, "Deposit of: " + 400 + "Date: " + 400 + "into account: " + "Checking");
+    assertEquals(System.out.println(test.Deposit), "Deposit of: " + 400 + "Date: " + 400 + "into account: " + "Checking");
     }
 
 

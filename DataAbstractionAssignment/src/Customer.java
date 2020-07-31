@@ -14,18 +14,10 @@ public class Customer {
     public static final String SAVING = "Saving";
     private final int OVERDRAFT = -100;
 
+    //default constructor
     Customer(){
         //code here
-        deposits = new ArrayList<Deposit>();
-        withdraws = new ArrayList<Withdraw>();
-        int accountNumber;
-        double checkBalance;
-        double savingBalance;
-        double savingRate;
-        String name;
-        final String Checking = "Checking";
-        final String SAVING = "Saving";
-        final int OVERDRAFT = -100;
+
     }
     Customer(String name, int accountNumber, double checkDeposit, double savingDeposit){
         //code here
@@ -38,14 +30,22 @@ public class Customer {
 
     public double deposit(double amt, Date date, String account){
         //code here
-        if (account == CHECKING){
-             amt += checkBalance;
+        Date date = new Date();
+        if ((account == CHECKING)&(amt>0)){
+            amt += checkBalance;
+            Deposit deposit = new Deposit(amt, date, account);
+            deposits.add(deposit);
             return checkBalance; }
 
-        else if (account == SAVING) {
+        else if ((account == SAVING)&(amt>0)) {
             amt += savingBalance;
+            Deposit deposit = new Deposit(amt, date, account);
+            deposits.add(deposit);
             return savingBalance;
         }
+        else
+            return
+
 
 
 
@@ -53,7 +53,20 @@ public class Customer {
     }
     public double withdraw(double amt, Date date, String account){
         //your code here
-        return 0;
+        if((account == CHECKING)&(amt>0)){
+            amt-= checkBalance;
+            Withdraw withdraw = new Withdraw(amt, date, account);
+            withdraws.add(withdraw);
+            return checkBalance;
+        }
+        if ((account == SAVING)&(amt>0)){
+            amt-= savingBalance;
+            Withdraw withdraw = new Withdraw(amt, date, account);
+            withdraws.add(withdraw);
+            return savingBalance;
+        }
+        else
+            return
     }
     private boolean checkOverdraft(double amt, String account){
         //your code here
@@ -73,3 +86,4 @@ public class Customer {
     }
 
 }
+

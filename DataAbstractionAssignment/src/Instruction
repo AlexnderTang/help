@@ -1,0 +1,19 @@
+In this assignment you are to create a customer class alongside a deposit class and a withdraw class.
+All of the methods you need to complete are already in the project
+You will need to fill out all the methods that have //code here
+You will need to create tests on the following methods and add specification comments
+Deposit.toString()
+Withdraw.toString()
+Customer.deposit()
+Customer.withdraw()
+A few new things: The date object is a class that easily insert today's date as its default constructor. Look up the class from java to learn how to use the constructor to create any date.
+
+public static final String CHECKING/SAVING
+final means that this value cant be changed. static means it is accessible from outside class. These two values should be always used when the methods, deposit and withdraw, are invoked. They belong in the "String account" parameter. This is a common way you can ensure the the user uses the correct String.
+
+Class requirements:
+The class should be able to use the deposit method deposit amounts into checking or saving balance.
+It should create a new deposit object and add it to the list of deposits. The display deposits should have the following output for each deposit:
+Deposit of: $400.0 Date: Sun Nov 04 00:00:00 PDT 2018 into account: Checking
+Withdraw method and display should work the same
+Do no forget to check overdraft for withdraw method.
